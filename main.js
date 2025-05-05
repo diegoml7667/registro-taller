@@ -2,18 +2,21 @@ const form = document.getElementById('formAsistente');
 const tabla = document.getElementById('tablaAsistentes');
 
 form.addEventListener('submit', function (e) {
-  e.preventDefault();
+    e.preventDefault();
 
-  const nombre = document.getElementById('nombre').value;
-  const email = document.getElementById('email').value;
+    const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
 
-  const fila = document.createElement('tr');
-  fila.innerHTML = `
-    <td>${nombre}</td>
-    <td>${email}</td>
-  `;
+    const fila = document.createElement('tr');
+    fila.innerHTML = `
+        <td>${nombre}</td>
+        <td>${email}</td>
+    `;
 
-  tabla.appendChild(fila);
+    tabla.appendChild(fila);
 
-  form.reset();
+    form.reset();
+
+    // Añadimos una alerta simple después del registro simulado
+    alert(`¡${nombre} registrado!`);
 });
